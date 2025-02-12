@@ -1,0 +1,23 @@
+<mat-sidenav-container>
+    
+    <mat-sidenav-content role="main">
+        <app-header></app-header>
+        
+        <main class="wrap-main-container">
+            <div class="container pb-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- MAIN CONTENT-->
+                        <router-outlet></router-outlet>
+                        <!-- END CONTENT-->
+                    </div>
+                </div>
+            </div>  
+        </main>
+
+        <app-footer></app-footer>
+        
+  
+    </mat-sidenav-content>
+    
+  </mat-sidenav-container>

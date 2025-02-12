@@ -6,6 +6,10 @@
 /out-tsc
 /bazel-out
 
+# Documentations
+documentation
+cypress
+
 # Node
 /node_modules
 npm-debug.log

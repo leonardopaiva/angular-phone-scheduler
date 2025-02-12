@@ -1,0 +1,49 @@
+.wrap-filter {
+    display: flex;
+}
+
+.wrap-contact-search {
+    width: 100%;
+    margin-right: 30px;
+}
+
+@media (max-width: 550px) {
+  .wrap-contact-search {
+    width: 60%;
+    margin-right: 10px;
+  }
+}
+@media (max-width: 450px) {
+  .wrap-contact-search {
+    width: 40%;
+    margin-right: 10px;
+  }
+}
+
+/* animations */
+.fade-in {
+    animation: fadeIn 300ms ease-in forwards;
+  }
+  
+  .fade-out {
+    animation: fadeOut 300ms ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  

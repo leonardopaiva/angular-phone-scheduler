@@ -1,0 +1,47 @@
+
+
+  .app-header {
+    background-color: #EFEFEF;
+    color: #333;
+    padding: 16px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 24px;
+  }
+  
+  .menu li a.active {
+    text-decoration: underline;
+    color: #3f51b5;
+  }
+  
+  .logo-container {
+    margin-right: 30px;
+  }
+
+  .menu-button {
+    font-size: 16px;
+    mat-icon {
+      margin-right: 5px;
+      position: relative;
+      font-size: 28px;
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  @media (max-width: 499px) {
+    .menu-button-bigger {
+      mat-icon {
+        width: 40px;
+      }
+    }
+  }
+  

@@ -1,0 +1,24 @@
+<h2>Agenda Telefônica</h2>
+
+<div class="wrap-filter">
+    <div class="wrap-contact-search" >
+        <app-contact-search (searchChange)="onFilterText($event)"></app-contact-search>
+    </div>
+    <app-custom-button 
+        [item]="filterButtons.favorite"  
+        (buttonClick)="onFilterButton($event)"
+        style="margin-right: 10px!important;"
+    ></app-custom-button>
+    <app-custom-button 
+        [item]="filterButtons.disabled"  
+        (buttonClick)="onFilterButton($event)"
+    ></app-custom-button>
+</div>
+
+<div class="row" [ngClass]="filteringItems ? 'fade-out' : 'fade-in'">
+    <div class="col-md-4 col-lg-3 mb-3" *ngFor="let item of filteredContacts" style="position: relative;">
+        <app-list-item [contact]="item" (actionChange)="onListItemAction($event)"></app-list-item>
+    </div>
+</div>
+
+<app-loader *ngIf="loading"/>

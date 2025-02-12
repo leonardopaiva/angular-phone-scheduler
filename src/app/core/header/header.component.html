@@ -1,0 +1,26 @@
+
+<header class="app-header">
+  
+    <nav class="wrap-main-menu">
+      <ul class="menu">
+        <li>
+          <a class="menu-button" mat-button routerLink="/contacts" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <mat-icon  aria-hidden="false" aria-label="Agenda Icon">group</mat-icon>
+            <span>Agenda</span>
+          </a>
+        </li>
+        <li>
+          <a class="menu-button menu-button-bigger" mat-button routerLink="/contacts/create" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <mat-icon aria-hidden="false" aria-label="Create Contact Icon">person_add</mat-icon>
+            <span>Criar Contato</span>
+          </a>
+        </li>
+        <li>
+          <a class="menu-button" mat-button routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <mat-icon aria-hidden="false" aria-label="About Icon">info</mat-icon>
+            <span>Sobre</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+</header>

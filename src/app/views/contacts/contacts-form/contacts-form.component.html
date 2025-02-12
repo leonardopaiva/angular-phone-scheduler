@@ -1,0 +1,83 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>Adicione um novo contato</h2>
+    </div>
+</div>
+
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+
+	<div class="row">
+		<div class="col-md-6">
+				<mat-form-field appearance="outline" class="w-100">
+					<mat-label>Nome</mat-label>
+					<input matInput formControlName="contato_nome" placeholder="Digite o nome do contato" />
+					<mat-error *ngIf="contactForm.get('contato_nome')?.hasError('required')">
+					Nome é obrigatório.
+					</mat-error>
+				</mat-form-field>
+			</div>
+			<div class="col-md-6">
+				<mat-form-field appearance="outline" class="w-100">
+					<mat-label>Email</mat-label>
+					<input matInput formControlName="contato_email" placeholder="Digite o email do contato" />
+					<mat-error *ngIf="contactForm.get('contato_email')?.hasError('required')">
+						Email é obrigatório.
+					</mat-error>
+					<mat-error *ngIf="contactForm.get('contato_email')?.hasError('email')">
+						Email inválido.
+					</mat-error>
+				</mat-form-field>
+			</div>
+	</div>
+
+	<div class="row mb-2">
+		<div class="col-md-6">
+			<mat-form-field appearance="outline" class="w-100">
+				<mat-label>Celular</mat-label>
+				<input 
+					matInput 
+					formControlName="contato_celular" 
+					placeholder="Digite o número do celular" 
+					mask="(00) 0000-00000" 
+				/>
+				<mat-error *ngIf="contactForm.get('contato_celular')?.hasError('required')">
+					Celular é obrigatório.
+				</mat-error>
+			</mat-form-field>
+		</div>
+
+		<div class="col-md-6 ">
+			<mat-form-field appearance="outline" class="w-100">
+				<mat-label>Telefone</mat-label>
+				<input 
+					matInput 
+					formControlName="contato_telefone" 
+					placeholder="Digite o telefone (opcional)" 
+					mask="(00) 0000-0000" 
+				/>
+			</mat-form-field>
+		</div>
+	</div>
+
+	<div class="row mb-4">
+		<div class="col-md-12">
+			<mat-slide-toggle 
+				[checked]="contactForm.value.contato_sn_favorito === 'S'"
+				(change)="onToggleFavorite($event)"
+				color="primary">
+				Favorito
+			</mat-slide-toggle>
+		</div>
+	</div>
+	
+	<app-loader *ngIf="loading"/>
+
+	<div class="row d-flex justify-content-center">
+		<div class="col-md-4 text-align-right">
+				<button mat-raised-button color="primary" type="submit" class="w-100" [disabled]="contactForm.invalid || loading" >
+					{{ (editMode) ? 'Atualizar Contato' : 'Cadastrar Contato' }}
+				</button>
+		</div>
+	</div>
+</form>
+

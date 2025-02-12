@@ -1,5 +1,9 @@
-/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
-/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+// include default
+// "src/**/*.d.ts"
+// para o compodoc funcionar deve-se alterar o include para
+// "src/**/*.ts"
+// porem fazer apenas para gerar a documentar e depois desfazer para evitar 
+// erros de compilacao no ng serve e outros comandos.
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
@@ -13,3 +17,4 @@
     "src/**/*.d.ts"
   ]
 }
+
